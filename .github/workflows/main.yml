@@ -1,0 +1,17 @@
+name: Movie Ticket Pricing BackEnd docker build push
+on:
+  push:
+    branches: [ master ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build the Movie Ticket Pricing BackEnd Docker image
+      run: docker build -t '${{secrets.DOCKER_USERNAME}}'/movie-ticket-pricing-backend-docker-workflow:v1'${{github.sha}}' .
+      
+    - name: Login to docker
+      run: docker login --username '${{secrets.DOCKER_USERNAME}}' --password '${{secrets.DOCKER_PASSWORD}}'
+
+    - name: Push the docker image
+      run: docker push '${{secrets.DOCKER_USERNAME}}'/movie-ticket-pricing-backend-docker-workflow:v1'${{github.sha}}'
