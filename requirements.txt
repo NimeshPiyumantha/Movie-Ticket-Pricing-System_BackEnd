@@ -1,0 +1,12 @@
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+pymongo[srv]
+cryptography
+
+pandas
+matplotlib
+numpy
+seaborn
+scikit-learn
+joblib
+
