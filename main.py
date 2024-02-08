@@ -6,10 +6,7 @@ from routes.predict_ticket_routes import predictTicketRouter
 
 app = FastAPI()
 
-origins = [
-    "http://localhost:3000",
-    # Add any other origins if needed
-]
+origins = ["*"]
 
 app.add_middleware(
     CORSMiddleware,
