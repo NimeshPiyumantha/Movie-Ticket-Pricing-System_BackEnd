@@ -15,7 +15,3 @@ jobs:
 
     - name: Push the docker image
       run: docker push '${{secrets.DOCKER_USERNAME}}'/movie-ticket-pricing-backend-docker-workflow:v1'${{github.sha}}'
-
-
-
-     
